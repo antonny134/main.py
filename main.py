@@ -18,8 +18,10 @@ IMAGENS_PRODUTOS = {
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://cardapio-t8lz.vercel.app/",
-        "https://antonny134.github.io/Cardapio/"
+        "https://cardapio-t8lz.vercel.app",
+        "https://antonny134.github.io",
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE"],
@@ -27,10 +29,7 @@ app.add_middleware(
 )
 FOTO = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=600"
 
-# Lista de lanches (os 2 primeiros são os seus; do id 3 ao 12 são novos).
-# As fotos vêm do Wikimedia Commons pelo endereço Special:FilePath, que
-# redireciona para o arquivo original (width=600 pede a imagem já reduzida).
-# Descrições e preços dos novos itens são exemplos: ajuste para o seu cardápio.
+
 
 produtos = [
     {
