@@ -18,7 +18,8 @@ IMAGENS_PRODUTOS = {
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://cardapio-t8lz.vercel.app/"
+        "https://cardapio-t8lz.vercel.app/",
+        "https://antonny134.github.io/Cardapio/"
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE"],
