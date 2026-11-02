@@ -255,10 +255,5 @@ def apagar_produto(id_produto: int):
     raise HTTPException(status_code=404, detail="Produto não encontrado.")
 
 
-@app.get("/atualizar")
-def colocar_produtos():
-    return FileResponse(PASTA_PROJETO / "funcionario.html")
-
-
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
