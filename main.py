@@ -22,6 +22,7 @@ app.add_middleware(
         "https://antonny134.github.io",
         "http://localhost:5500",
         "http://127.0.0.1:5500",
+        "https://cardapio-iota-weld.vercel.app/"
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "DELETE"],
