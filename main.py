@@ -27,20 +27,7 @@ FOTO = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=600"
 
 
 produtos = [
-    {
-        "id_produto": 1,
-        "nome": "X tudo",
-        "descricao": "Feito com calabresa, salsicha e bacon.",
-        "url_foto": "/imagens/1 imagem.jpg",
-        "valor": 29.50,
-    },
-    {
-        "id_produto": 2,
-        "nome": "X TUDÂO",
-        "descricao": "2 calabressa 1 mortadela ",
-        "url_foto": "/imagens/x tudão.jpg",
-        "valor": 30.50,
-    },
+
     {
         "id_produto": 3,
         "nome": "X-Burger",
@@ -114,13 +101,7 @@ produtos = [
 ]
 
 bebidas = [
-    {
-        "id_produto": 13,
-        "nome": "Suco de Laranja",
-        "descricao": "Suco de laranja natural.",
-        "url_foto": "/imagens/bebida-suco-de-laranja.jpg",
-        "valor": 3.50,
-    },
+    
     {
         "id_produto": 14,
         "nome": "Suco de Manga",
@@ -219,7 +200,7 @@ class NovoProduto(BaseModel):
     descricao: str = ""
     valor: float
     url_foto: str = ""
-    categoria: str  # "lanche" ou "bebida"
+    categoria: str  
 
 
 # ---------- Rotas ----------
