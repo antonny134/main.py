@@ -285,10 +285,6 @@ def apagar_produto(id_produto: int):
 
 
 @app.get("/config")
-def obter_configuracao():
-    return
-
-
 def iniciar_janela():
     # Importado aqui para a API rodar em servidores sem Tk (ex.: Vercel).
     import tkinter as tk
