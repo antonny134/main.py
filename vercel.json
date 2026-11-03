@@ -1,5 +1,10 @@
 {
-  "routes": [
-    { "src": "/(.*)", "dest": "main.py" }
-  ]
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": ["index.html", "banco.json", "*.jpg"] }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "main.py" }]
 }

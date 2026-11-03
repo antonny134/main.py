@@ -1,11 +1,10 @@
 import base64
+import os
 import math
 import json
 import mimetypes
 from pathlib import Path
 from typing import Literal
-import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
 import webbrowser
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -181,6 +180,8 @@ ARQUIVO_BANCO = PASTA_PROJETO / "banco.json"
 
 
 def salvar_banco():
+    if os.environ.get("VERCEL"):
+        return  # disco somente leitura na Vercel: alterações ficam só em memória
     ARQUIVO_BANCO.write_text(
         json.dumps({"produtos": produtos, "bebidas": bebidas}, ensure_ascii=False, indent=2),
         encoding="utf-8",
@@ -289,6 +290,10 @@ def obter_configuracao():
 
 
 def iniciar_janela():
+    # Importado aqui para a API rodar em servidores sem Tk (ex.: Vercel).
+    import tkinter as tk
+    from tkinter import filedialog, messagebox, ttk
+
     janela = tk.Tk()
     janela.title("Gerenciador de produtos")
     janela.geometry("900x560")
