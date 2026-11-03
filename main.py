@@ -219,6 +219,9 @@ def imagem_produto(nome_arquivo: str):
         raise HTTPException(status_code=404, detail="Imagem não encontrada.")
     return FileResponse(caminho)
 
+@app.get("/painel")
+def painel():
+    return FileResponse(PASTA_PROJETO / "painel.html")
 
 @app.get("/produtos-lanche")
 @app.get("/produtos")
